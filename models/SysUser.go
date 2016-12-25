@@ -2,7 +2,7 @@ package models
 
 import "github.com/jinzhu/gorm"
 
-type User struct {
+type SysUser struct {
 	gorm.Model
 	UserName     string
 	UserPassword string

@@ -21,7 +21,7 @@ func (controller IndexController)Index(c *gin.Context) {
 	//s.Set("a", "d")
 	//s.Save()
 	//println(s.Get("a").(string))
-	user := models.User{}
+	user := models.SysUser{}
 	rs := controller.db.Find(&user)
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"rs":rs,
