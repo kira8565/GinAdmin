@@ -12,10 +12,10 @@ func main() {
 		panic(err)
 	}
 	defer db.Close()
-
 	db.DropTable(
 		&models.SysUser{},
 		&models.SysRole{},
+		&models.SysMenu{},
 		"ginadmin.sys_role_user",
 		"ginadmin.sys_menu_role")
 
@@ -30,4 +30,14 @@ func main() {
 	adminRole := &models.SysRole{RoleName:"管理员", Users:[]models.SysUser{*adminUser}}
 	db.Create(adminRole)
 
+	indexMenus := &models.SysMenu{
+		MenuName:"首页",
+	}
+	db.Create(&indexMenus)
+
+	menuMenu := &models.SysMenu{
+		MenuName:"菜单管理", ParentId:indexMenus.ID,
+	}
+
+	db.Create(&menuMenu)
 }
