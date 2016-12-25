@@ -30,6 +30,6 @@ func main() {
 
 	mainformController := controllers.NewMainFormController(db)
 	r.GET("/mainform", mainformController.MainFormIndex)
-
+	r.GET("/dashboard", mainformController.DashBoardIndex)
 	r.Run()
 }

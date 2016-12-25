@@ -28,26 +28,26 @@
                 </li>
                 {{$subMenus := .menus}}
                 {{range .menus}}
-                    {{if eq .ParentId 0}}
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-home"></i>
-                                <span class="nav-label">{{.MenuName}}</span>
-                                <span class="fa arrow"></span>
-                            </a>
+                {{if eq .ParentId 0}}
+                <li>
+                    <a href="#">
+                        <i class="fa fa-home"></i>
+                        <span class="nav-label">{{.MenuName}}</span>
+                        <span class="fa arrow"></span>
+                    </a>
 
-                            {{$pid := .ID}}
-                            <ul class="nav nav-second-level">
-                                {{range $subMenus}}
-                                    {{if eq $pid .ParentId}}
-                                        <li>
-                                            <a class="J_menuItem" href="index_v1.html" data-index="0">{{.MenuName}}</a>
-                                        </li>
-                                    {{end}}
-                                {{end}}
-                            </ul>
+                    {{$pid := .ID}}
+                    <ul class="nav nav-second-level">
+                        {{range $subMenus}}
+                        {{if eq $pid .ParentId}}
+                        <li>
+                            <a class="J_menuItem" href="index_v1.html" data-index="0">{{.MenuName}}</a>
                         </li>
-                    {{end}}
+                        {{end}}
+                        {{end}}
+                    </ul>
+                </li>
+                {{end}}
                 {{end}}
 
             </ul>
@@ -76,7 +76,9 @@
             <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
             </button>
             <nav class="page-tabs J_menuTabs">
-
+                <div class="page-tabs-content">
+                    <a href="javascript:;" class="active J_menuTab" data-id="/dashboard">仪表盘</a>
+                </div>
             </nav>
             <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
             </button>
@@ -97,8 +99,8 @@
             <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="index_v148b2.html?v=4.0"
-                    frameborder="0" data-id="index_v1.html" seamless></iframe>
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/dashboard"
+                    frameborder="0" data-id="/dashboard" seamless></iframe>
         </div>
         {{template "footer"}}
     </div>
