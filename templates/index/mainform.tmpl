@@ -41,7 +41,7 @@
                         {{range $subMenus}}
                         {{if eq $pid .ParentId}}
                         <li>
-                            <a class="J_menuItem" href="index_v1.html" data-index="0">{{.MenuName}}</a>
+                            <a class="J_menuItem" href="{{.MenuUrl}}" data-index="0">{{.MenuName}}</a>
                         </li>
                         {{end}}
                         {{end}}

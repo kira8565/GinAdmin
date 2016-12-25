@@ -31,13 +31,23 @@ func main() {
 	db.Create(adminRole)
 
 	indexMenus := &models.SysMenu{
-		MenuName:"首页",
+		MenuName:"首页", MenuUrl:"#",
 	}
 	db.Create(&indexMenus)
 
 	menuMenu := &models.SysMenu{
-		MenuName:"菜单管理", ParentId:indexMenus.ID,
+		MenuName:"仪表盘", ParentId:indexMenus.ID, MenuUrl:"/dashboard",
 	}
 
 	db.Create(&menuMenu)
+
+	systemMenus := &models.SysMenu{
+		MenuName:"系统管理", MenuUrl:"#",
+	}
+	db.Create(&systemMenus)
+
+	meneManagerMenu := &models.SysMenu{
+		MenuName:"菜单管理", MenuUrl:"/menu/index", ParentId:systemMenus.ID,
+	}
+	db.Create(&meneManagerMenu)
 }

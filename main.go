@@ -31,5 +31,8 @@ func main() {
 	mainformController := controllers.NewMainFormController(db)
 	r.GET("/mainform", mainformController.MainFormIndex)
 	r.GET("/dashboard", mainformController.DashBoardIndex)
+
+	menuController := controllers.NewMenuController(db)
+	r.GET("/menu/index", menuController.MenuIndex)
 	r.Run()
 }
