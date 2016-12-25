@@ -6,7 +6,6 @@ import (
 	"github.com/tommy351/gin-sessions"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-
 )
 
 func main() {
@@ -25,5 +24,6 @@ func main() {
 
 	indexController := controllers.NewIndexController(db)
 	r.GET("/", indexController.Index)
+	r.POST("/checklogin", indexController.CheckLogin)
 	r.Run()
 }
