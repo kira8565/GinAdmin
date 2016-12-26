@@ -16,6 +16,6 @@ func NewMenuController(db *gorm.DB) *MenuController {
 }
 
 func (controller MenuController)MenuIndex(c *gin.Context) {
-	c.HTML(http.StatusOK, "menu_index.tmpl", gin.H{
+	c.HTML(http.StatusOK, "menu_index.html", gin.H{
 	})
 }

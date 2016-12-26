@@ -43,7 +43,7 @@
       <MavenGeneralSettings>
         <option name="localRepository" value="$MAVEN_REPOSITORY$" />
         <option name="mavenHome" value="Bundled (Maven 3)" />
-        <option name="userSettingsFile" value="$PROJECT_DIR$/../../../../../apache-maven-3.3.9/conf/settings.xml" />
+        <option name="userSettingsFile" value="$USER_HOME$/apache-maven-3.3.9/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -91,7 +91,7 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="Go 1.7.3" project-jdk-type="Go SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="Go 1.7.1" project-jdk-type="Go SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

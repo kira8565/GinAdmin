@@ -19,7 +19,7 @@ func (controller MainFormController)MainFormIndex(c *gin.Context) {
 	menus := []models.SysMenu{}
 	controller.db.Find(&menus)
 
-	c.HTML(http.StatusOK, "mainform.tmpl", gin.H{
+	c.HTML(http.StatusOK, "mainform.html", gin.H{
 		"menus":menus,
 	})
 }
@@ -28,6 +28,6 @@ func (controller MainFormController)DashBoardIndex(c *gin.Context) {
 	menus := []models.SysMenu{}
 	controller.db.Find(&menus)
 
-	c.HTML(http.StatusOK, "dashboard.tmpl", gin.H{
+	c.HTML(http.StatusOK, "dashboard.html", gin.H{
 	})
 }

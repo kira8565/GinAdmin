@@ -1,29 +1,29 @@
 <component name="libraryTable">
   <library name="GOPATH &lt;GinAdmin&gt;">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../.." />
-      <root url="file://$PROJECT_DIR$/../../../golang.org" />
-      <root url="file://$PROJECT_DIR$/../../../beedemo" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org" />
-      <root url="file://$PROJECT_DIR$/../../../.idea" />
-      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
-      <root url="file://$PROJECT_DIR$/../../../demoserver" />
-      <root url="file://$PROJECT_DIR$/../../../opms" />
-      <root url="file://$PROJECT_DIR$/../../../demo" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
       <root url="file://$PROJECT_DIR$/../../../google.golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../antdserver" />
+      <root url="file://$PROJECT_DIR$/../../../.idea" />
+      <root url="file://$PROJECT_DIR$/../../../demo" />
+      <root url="file://$PROJECT_DIR$/../../../default.etcd" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../.." />
-      <root url="file://$PROJECT_DIR$/../../../golang.org" />
-      <root url="file://$PROJECT_DIR$/../../../beedemo" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org" />
-      <root url="file://$PROJECT_DIR$/../../../.idea" />
-      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
-      <root url="file://$PROJECT_DIR$/../../../demoserver" />
-      <root url="file://$PROJECT_DIR$/../../../opms" />
-      <root url="file://$PROJECT_DIR$/../../../demo" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
       <root url="file://$PROJECT_DIR$/../../../google.golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../antdserver" />
+      <root url="file://$PROJECT_DIR$/../../../.idea" />
+      <root url="file://$PROJECT_DIR$/../../../demo" />
+      <root url="file://$PROJECT_DIR$/../../../default.etcd" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
     </SOURCES>
     <excluded>
       <root url="file://$PROJECT_DIR$" />

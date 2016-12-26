@@ -9,8 +9,9 @@ import (
 func AuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		session := sessions.Get(c)
-		if session.Get("isLogin") == nil && c.Request.URL.Path != "/" {
-			c.Redirect(http.StatusMovedPermanently, "/?msg=请登录")
+		if session.Get("isLogin") == nil &&
+			(c.Request.URL.Path != "/" || c.Request.URL.Path != "/checklogin") {
+			c.Redirect(http.StatusPermanentRedirect, "?msg=请登录")
 		}
 	}
 }

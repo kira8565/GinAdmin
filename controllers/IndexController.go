@@ -18,7 +18,7 @@ func NewIndexController(db *gorm.DB) *IndexController {
 }
 
 func (controller IndexController)Index(c *gin.Context) {
-	c.HTML(http.StatusOK, "index.tmpl", gin.H{
+	c.HTML(http.StatusOK, "index.html", gin.H{
 		"msg":c.DefaultQuery("msg", ""),
 	})
 }
