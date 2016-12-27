@@ -7,157 +7,38 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>基本
-                        <small>分类，查找</small>
+                    <h5>菜单管理
                     </h5>
                     <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="table_data_tables.html#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="table_data_tables.html#">选项1</a>
-                            </li>
-                            <li><a href="table_data_tables.html#">选项2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
+
                     </div>
                 </div>
                 <div class="ibox-content">
 
                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline" role="grid">
-                        <!--<div class="row">-->
-                            <!--<div class="col-sm-6">-->
-                                <!--<div class="dataTables_length" id="DataTables_Table_0_length"><label>每页 <select-->
-                                        <!--name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"-->
-                                        <!--class="form-control input-sm">-->
-                                    <!--<option value="10">10</option>-->
-                                    <!--<option value="25">25</option>-->
-                                    <!--<option value="50">50</option>-->
-                                    <!--<option value="100">100</option>-->
-                                <!--</select> 条记录</label></div>-->
-                            <!--</div>-->
-                            <!--<div class="col-sm-6">-->
-                                <!--<div id="DataTables_Table_0_filter" class="dataTables_filter"><label>查找：<input-->
-                                        <!--type="search" class="form-control input-sm" aria-controls="DataTables_Table_0"></label>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
                         <table class="table table-striped table-bordered table-hover dataTables-example dataTable"
                                id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                             <thead>
                             <tr role="row">
-                                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1" aria-label="渲染引擎：激活排序列升序" aria-sort="ascending" style="width: 300px;">
-                                    渲染引擎
-                                </th>
-                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1" aria-label="浏览器：激活排序列升序" style="width: 517px;">浏览器
-                                </th>
-                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1" aria-label="平台：激活排序列升序" style="width: 485px;">平台
-                                </th>
-                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1" aria-label="引擎版本：激活排序列升序" style="width: 220px;">引擎版本
-                                </th>
-                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1" aria-label="CSS等级：激活排序列升序" style="width: 221px;">CSS等级
+                                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                    colspan="1">
+                                    菜单名称
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
 
-
-                            <tr class="gradeC odd">
-                                <td class="sorting_1">KHTML</td>
-                                <td class=" ">Konqureror 3.1</td>
-                                <td class=" ">KDE 3.1</td>
-                                <td class="center ">3.1</td>
-                                <td class="center ">C</td>
+                            {{range .list}}
+                            <tr class="">
+                                <td>{{.MenuName}}</td>
                             </tr>
-                            <tr class="gradeA even">
-                                <td class="sorting_1">KHTML</td>
-                                <td class=" ">Konqureror 3.3</td>
-                                <td class=" ">KDE 3.3</td>
-                                <td class="center ">3.3</td>
-                                <td class="center ">A</td>
-                            </tr>
-                            <tr class="gradeA odd">
-                                <td class="sorting_1">KHTML</td>
-                                <td class=" ">Konqureror 3.5</td>
-                                <td class=" ">KDE 3.5</td>
-                                <td class="center ">3.5</td>
-                                <td class="center ">A</td>
-                            </tr>
-                            <tr class="gradeA even">
-                                <td class="sorting_1">Misc</td>
-                                <td class=" ">NetFront 3.1</td>
-                                <td class=" ">Embedded devices</td>
-                                <td class="center ">-</td>
-                                <td class="center ">C</td>
-                            </tr>
-                            <tr class="gradeA odd">
-                                <td class="sorting_1">Misc</td>
-                                <td class=" ">NetFront 3.4</td>
-                                <td class=" ">Embedded devices</td>
-                                <td class="center ">-</td>
-                                <td class="center ">A</td>
-                            </tr>
-                            <tr class="gradeX even">
-                                <td class="sorting_1">Misc</td>
-                                <td class=" ">Dillo 0.8</td>
-                                <td class=" ">Embedded devices</td>
-                                <td class="center ">-</td>
-                                <td class="center ">X</td>
-                            </tr>
-                            <tr class="gradeX odd">
-                                <td class="sorting_1">Misc</td>
-                                <td class=" ">Links</td>
-                                <td class=" ">Text only</td>
-                                <td class="center ">-</td>
-                                <td class="center ">X</td>
-                            </tr>
-                            <tr class="gradeX even">
-                                <td class="sorting_1">Misc</td>
-                                <td class=" ">Lynx</td>
-                                <td class=" ">Text only</td>
-                                <td class="center ">-</td>
-                                <td class="center ">X</td>
-                            </tr>
-                            <tr class="gradeC odd">
-                                <td class="sorting_1">Misc</td>
-                                <td class=" ">IE Mobile</td>
-                                <td class=" ">Windows Mobile 6</td>
-                                <td class="center ">-</td>
-                                <td class="center ">C</td>
-                            </tr>
-                            <tr class="gradeC even">
-                                <td class="sorting_1">Misc</td>
-                                <td class=" ">PSP browser</td>
-                                <td class=" ">PSP</td>
-                                <td class="center ">-</td>
-                                <td class="center ">C</td>
-                            </tr>
+                            {{end}}
                             </tbody>
-                            <tfoot>
-                            <tr>
-                                <th rowspan="1" colspan="1">渲染引擎</th>
-                                <th rowspan="1" colspan="1">浏览器</th>
-                                <th rowspan="1" colspan="1">平台</th>
-                                <th rowspan="1" colspan="1">引擎版本</th>
-                                <th rowspan="1" colspan="1">CSS等级</th>
-                            </tr>
-                            </tfoot>
                         </table>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="dataTables_info" id="DataTables_Table_0_info" role="alert"
-                                     aria-live="polite" aria-relevant="all">显示 21 到 30 项，共 57 项
+                                     aria-live="polite" aria-relevant="all">显示 21 到 30 项，共 {{.total}} 项
                                 </div>
                             </div>
                             <div class="pull-right">

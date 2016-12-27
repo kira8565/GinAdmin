@@ -5,6 +5,7 @@ import (
 	"net/http"
 	//"github.com/tommy351/gin-sessions"
 	"github.com/jinzhu/gorm"
+	"github.com/kira8565/GinAdmin/models"
 )
 
 type MenuController struct {
@@ -16,6 +17,11 @@ func NewMenuController(db *gorm.DB) *MenuController {
 }
 
 func (controller MenuController)MenuIndex(c *gin.Context) {
+	list := []models.SysMenu{}
+	total := 0
+	controller.db.Find(&list).Count(&total)
 	c.HTML(http.StatusOK, "menu_index.html", gin.H{
+		"list":list,
+		"total":total,
 	})
 }
