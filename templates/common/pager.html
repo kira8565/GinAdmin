@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="dataTables_info" id="DataTables_Table_0_info" role="alert"
-             aria-live="polite" aria-relevant="all">共{{.totals}}条记录 共记{{.paginator.totalpages}}
+             aria-live="polite" aria-relevant="all">共{{.paginator.total}}条记录 共记{{.paginator.totalpages}}
             页 当前页 {{.paginator.currpage}}
         </div>
     </div>
@@ -11,16 +11,43 @@
         <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
             <ul class="pagination">
                 <li class="paginate_button previous" aria-controls="DataTables_Table_0"
-                    tabindex="0" id="DataTables_Table_0_previous"><a href="#">上一页</a></li>
+                    tabindex="0" id="DataTables_Table_0_previous"><a href="#" onclick="page(0)">首页</a></li>
+                {{$lastindex:=0}}
                 {{range $index,$page := .paginator.pages}}
                 <li {{if eq $.paginator.currpage $page }}class="paginate_button" {{end}}><a
-                        href="/clubadmin/topics/{{$page}}">{{$page}}</a></li>
+                        href="#" onclick="page('{{$page}}')">{{$page}}</a></li>
+                {{$lastindex:=$page}}
                 {{end}}
                 <li class="paginate_button next" aria-controls="DataTables_Table_0" tabindex="0"
-                    id="DataTables_Table_0_next"><a href="#">下一页</a></li>
+                    id="DataTables_Table_0_next"><a href="#" onclick="page('{{$lastindex}}')">末页</a></li>
             </ul>
         </div>
     </div>
 </div>
-
+<script>
+    function page(offset) {
+        var url = window.location.href;
+        debugger;
+        if (url.indexOf("?") == -1) {
+            if (url.indexOf("page") == -1) {
+                url += "?page=" + offset;
+            } else {
+                url = replaceParamVal(url, 'offset', offset);
+            }
+        } else {
+            if (url.indexOf("page") == -1) {
+                url += "page=" + offset;
+            } else {
+                url = replaceParamVal(url, 'offset', offset);
+            }
+        }
+        window.location.href = url;
+    }
+    function replaceParamVal(url, paramName, replaceWith) {
+        var oUrl = url;
+        var re = eval('/(' + paramName + '=)([^&]*)/gi');
+        var nUrl = url.replace(re, paramName + '=' + replaceWith);
+        return nUrl;
+    }
+</script>
 {{ end }}
