@@ -17,7 +17,7 @@ func main() {
 	r.Use(middlewares.AuthMiddleware())
 	r.LoadHTMLGlob("templates/**/*")
 
-	db, err := gorm.Open("mysql", "root:@/ginadmin?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "root:8565@/ginadmin?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}

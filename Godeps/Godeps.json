@@ -1,0 +1,81 @@
+{
+	"ImportPath": "github.com/kira8565/GinAdmin",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v75",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gin-gonic/gin",
+			"Comment": "v1.0-4-gbb159f9",
+			"Rev": "bb159f9260a262fccbdbd6f37f8575d1e7e6aaa0"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin/binding",
+			"Comment": "v1.0-4-gbb159f9",
+			"Rev": "bb159f9260a262fccbdbd6f37f8575d1e7e6aaa0"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin/render",
+			"Comment": "v1.0-4-gbb159f9",
+			"Rev": "bb159f9260a262fccbdbd6f37f8575d1e7e6aaa0"
+		},
+		{
+			"ImportPath": "github.com/go-sql-driver/mysql",
+			"Comment": "v1.3",
+			"Rev": "a0583e0143b1624142adab07e0e97fe106d99561"
+		},
+		{
+			"ImportPath": "github.com/golang/protobuf/proto",
+			"Rev": "8ee79997227bf9b34611aee7946ae64735e6fd93"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Comment": "v1.1-7-g08b5f42",
+			"Rev": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+		},
+		{
+			"ImportPath": "github.com/gorilla/securecookie",
+			"Comment": "v1.1-5-gfa5329f",
+			"Rev": "fa5329f913702981df43dcb2a380bac429c810b5"
+		},
+		{
+			"ImportPath": "github.com/gorilla/sessions",
+			"Comment": "v1.1-2-g83c8db3",
+			"Rev": "83c8db3bdc9be789e57e3756ffbcffd2d7d40176"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Comment": "v1.0-96-g066abce",
+			"Rev": "066abcef408f2522f0a89952e44ab17eac176ed0"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm/dialects/mysql",
+			"Comment": "v1.0-96-g066abce",
+			"Rev": "066abcef408f2522f0a89952e44ab17eac176ed0"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/inflection",
+			"Rev": "74387dc39a75e970e7a3ae6a3386b5bd2e5c5cff"
+		},
+		{
+			"ImportPath": "github.com/manucorporat/sse",
+			"Rev": "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d"
+		},
+		{
+			"ImportPath": "github.com/tommy351/gin-sessions",
+			"Rev": "353060947eb6549deb9e15229c73ed37931acf5f"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "4971afdc2f162e82d185353533d3cf16188a9f4e"
+		},
+		{
+			"ImportPath": "gopkg.in/go-playground/validator.v8",
+			"Comment": "v8.18.1",
+			"Rev": "5f57d2222ad794d0dffb07e664ea05e2ee07d60c"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Rev": "a5b47d31c556af34a302ce5d659e6fea44d90de0"
+		}
+	]
+}
