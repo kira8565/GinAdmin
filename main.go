@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	r := gin.New()
 	r.Static("/assets", "./assets")
 	store := sessions.NewCookieStore([]byte("GinAdmin"))

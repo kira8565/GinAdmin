@@ -6,22 +6,30 @@ import (
 	//"github.com/tommy351/gin-sessions"
 	"github.com/jinzhu/gorm"
 	"github.com/kira8565/GinAdmin/models"
+	"github.com/kira8565/GinAdmin/utils"
 )
 
 type MenuController struct {
-	db *gorm.DB
+	db       *gorm.DB
+	pagesize int
 }
 
-func NewMenuController(db *gorm.DB) *MenuController {
-	return &MenuController{db: db}
+func NewMenuController(db *gorm.DB, pagesize int) *MenuController {
+	return &MenuController{db: db, pagesize:pagesize}
 }
 
 func (controller MenuController)MenuIndex(c *gin.Context) {
 	list := []models.SysMenu{}
-	total := 0
-	controller.db.Find(&list).Count(&total)
+	total := int64(0)
+	cueerntPage := int(0)
+	if page, result := c.Get("page"); result == true {
+		cueerntPage = page.(int)
+	}
+	controller.db.Limit(controller.pagesize).Offset(cueerntPage).Find(&list).Count(&total)
+	res := utils.Paginator(cueerntPage, controller.pagesize, total)
 	c.HTML(http.StatusOK, "menu_index.html", gin.H{
 		"list":list,
-		"total":total,
+		"paginator":res,
 	})
 }
+

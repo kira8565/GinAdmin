@@ -20,10 +20,8 @@
                                id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                             <thead>
                             <tr role="row">
-                                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1">
-                                    菜单名称
-                                </th>
+                                <th rowspan="1" colspan="1">菜单名称</th>
+                                <th rowspan="1" colspan="1">菜单地址</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,39 +29,12 @@
                             {{range .list}}
                             <tr class="">
                                 <td>{{.MenuName}}</td>
+                                <td>{{.MenuUrl}}</td>
                             </tr>
                             {{end}}
                             </tbody>
                         </table>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="dataTables_info" id="DataTables_Table_0_info" role="alert"
-                                     aria-live="polite" aria-relevant="all">显示 21 到 30 项，共 {{.total}} 项
-                                </div>
-                            </div>
-                            <div class="pull-right">
-                                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button previous" aria-controls="DataTables_Table_0"
-                                            tabindex="0" id="DataTables_Table_0_previous"><a href="#">上一页</a></li>
-                                        <li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a
-                                                href="#">1</a></li>
-                                        <li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a
-                                                href="#">2</a></li>
-                                        <li class="paginate_button active" aria-controls="DataTables_Table_0"
-                                            tabindex="0"><a href="#">3</a></li>
-                                        <li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a
-                                                href="#">4</a></li>
-                                        <li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a
-                                                href="#">5</a></li>
-                                        <li class="paginate_button " aria-controls="DataTables_Table_0" tabindex="0"><a
-                                                href="#">6</a></li>
-                                        <li class="paginate_button next" aria-controls="DataTables_Table_0" tabindex="0"
-                                            id="DataTables_Table_0_next"><a href="#">下一页</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        {{template "pager" .}}
                     </div>
 
                 </div>

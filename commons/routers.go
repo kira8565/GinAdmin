@@ -7,6 +7,7 @@ import (
 )
 
 func BindRouters(r *gin.Engine, db *gorm.DB) {
+	GlobalPageSize := 10
 	indexController := controllers.NewIndexController(db)
 	r.GET("/", indexController.Index)
 	r.POST("/checklogin", indexController.CheckLogin)
@@ -15,6 +16,6 @@ func BindRouters(r *gin.Engine, db *gorm.DB) {
 	r.GET("/mainform", mainformController.MainFormIndex)
 	r.GET("/dashboard", mainformController.DashBoardIndex)
 
-	menuController := controllers.NewMenuController(db)
+	menuController := controllers.NewMenuController(db, GlobalPageSize)
 	r.GET("/menu/index", menuController.MenuIndex)
 }

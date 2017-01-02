@@ -1,0 +1,26 @@
+{{ define "pager"}}
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="dataTables_info" id="DataTables_Table_0_info" role="alert"
+             aria-live="polite" aria-relevant="all">共{{.totals}}条记录 共记{{.paginator.totalpages}}
+            页 当前页 {{.paginator.currpage}}
+        </div>
+    </div>
+    <div class="pull-right">
+        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+            <ul class="pagination">
+                <li class="paginate_button previous" aria-controls="DataTables_Table_0"
+                    tabindex="0" id="DataTables_Table_0_previous"><a href="#">上一页</a></li>
+                {{range $index,$page := .paginator.pages}}
+                <li {{if eq $.paginator.currpage $page }}class="paginate_button" {{end}}><a
+                        href="/clubadmin/topics/{{$page}}">{{$page}}</a></li>
+                {{end}}
+                <li class="paginate_button next" aria-controls="DataTables_Table_0" tabindex="0"
+                    id="DataTables_Table_0_next"><a href="#">下一页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{ end }}
