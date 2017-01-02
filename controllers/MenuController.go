@@ -19,7 +19,18 @@ func NewMenuController(db *gorm.DB, pagesize int) *MenuController {
 	return &MenuController{db: db, pagesize:pagesize}
 }
 
+//菜单管理列表
 func (controller MenuController)MenuIndex(c *gin.Context) {
+	db := controller.db
+
+	//构造查询条件
+	menunameQuery := ""
+	if obj, rs := c.GetQuery("menuname"); rs == true {
+		menunameQuery = obj
+		db = controller.db.Where("menu_name like ?", "%" + menunameQuery + "%")
+	}
+
+	//查询分页
 	list := []models.SysMenu{}
 	total := int64(0)
 	currentPage := int(0)
@@ -32,11 +43,13 @@ func (controller MenuController)MenuIndex(c *gin.Context) {
 		}
 
 	}
-	controller.db.Find(&list).Count(&total)
-	controller.db.Limit(controller.pagesize).Offset(currentPage).Find(&list)
+	db.Find(&list).Count(&total)
+	db.Limit(controller.pagesize).Offset(currentPage).Find(&list)
 
+	//返回列表
 	res := utils.Paginator(currentPage, controller.pagesize, total)
 	c.HTML(http.StatusOK, "menu_index.html", gin.H{
+		"menunameQuery":menunameQuery,
 		"list":list,
 		"paginator":res,
 	})

@@ -32,13 +32,13 @@
             if (url.indexOf("page") == -1) {
                 url += "?page=" + offset;
             } else {
-                url = replaceParamVal(url, 'offset', offset);
+                url = replaceParamVal(url, 'page', offset);
             }
         } else {
             if (url.indexOf("page") == -1) {
-                url += "page=" + offset;
+                url += "&page=" + offset;
             } else {
-                url = replaceParamVal(url, 'offset', offset);
+                url = replaceParamVal(url, 'page', offset);
             }
         }
         window.location.href = url;
