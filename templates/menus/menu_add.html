@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{{template "header"}}
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>新增菜单
+                    </h5>
+                </div>
+                <div class="ibox-content">
+                    <form method="post" action="/menu/addeneity" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">菜单名称</label>
+                            <div class="col-sm-10">
+                                <input required="required" aria-required="true" type="text" class="form-control"
+                                       name="menunane">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">菜单地址</label>
+                            <div class="col-sm-10">
+                                <input required="required" aria-required="true" type="text" class="form-control"
+                                       name="menuurl">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-primary" type="submit">保存</button>
+                                <button class="btn btn-white" type="submit">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

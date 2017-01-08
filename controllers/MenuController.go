@@ -19,6 +19,32 @@ func NewMenuController(db *gorm.DB, pagesize int) *MenuController {
 	return &MenuController{db: db, pagesize:pagesize}
 }
 
+func (controller MenuController)AddMenu(c *gin.Context) {
+	c.HTML(http.StatusOK, "menu_add.html", gin.H{
+	})
+}
+
+func (controller MenuController)AddMenuEntity(c *gin.Context) {
+	menunane, _ := c.GetPostForm("menunane")
+	menuurl := c.PostForm("menuurl")
+	menu := &models.SysMenu{
+		MenuName:menunane,
+		MenuUrl:menuurl,
+	}
+	controller.db.Save(&menu)
+	c.Redirect(http.StatusMovedPermanently, "/menu/index?msg=新增成功&code=alert-success")
+}
+
+func (controller MenuController)DeleteMenuEntity(c *gin.Context) {
+	uid, rs := c.GetQuery("id")
+	if rs == true {
+		controller.db.Where("id=?", uid).Delete(&models.SysMenu{})
+		c.Redirect(http.StatusMovedPermanently, "/menu/index?msg=删除成功&code=alert-success")
+	} else {
+		c.Redirect(http.StatusMovedPermanently, "/menu/index?msg=删除失败,请选择记录&code=alert-danger")
+	}
+
+}
 //菜单管理列表
 func (controller MenuController)MenuIndex(c *gin.Context) {
 	db := controller.db
@@ -29,6 +55,8 @@ func (controller MenuController)MenuIndex(c *gin.Context) {
 		menunameQuery = obj
 		db = controller.db.Where("menu_name like ?", "%" + menunameQuery + "%")
 	}
+	msg := c.DefaultQuery("msg", "")
+	code := c.DefaultQuery("code", "")
 
 	//查询分页
 	list := []models.SysMenu{}
@@ -52,6 +80,8 @@ func (controller MenuController)MenuIndex(c *gin.Context) {
 		"menunameQuery":menunameQuery,
 		"list":list,
 		"paginator":res,
+		"msg":msg,
+		"code":code,
 	})
 }
 
