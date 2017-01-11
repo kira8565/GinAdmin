@@ -21,4 +21,6 @@ func BindRouters(r *gin.Engine, db *gorm.DB) {
 	r.GET("/menu/add", menuController.AddMenu)
 	r.GET("/menu/delete", menuController.DeleteMenuEntity)
 	r.POST("/menu/addeneity", menuController.AddMenuEntity)
+	r.GET("/menu/edit", menuController.EditMenu)
+	r.POST("/menu/editeneity", menuController.EditMenuEntity)
 }

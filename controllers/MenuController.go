@@ -25,14 +25,41 @@ func (controller MenuController)AddMenu(c *gin.Context) {
 }
 
 func (controller MenuController)AddMenuEntity(c *gin.Context) {
-	menunane, _ := c.GetPostForm("menunane")
-	menuurl := c.PostForm("menuurl")
 	menu := &models.SysMenu{
-		MenuName:menunane,
-		MenuUrl:menuurl,
+		MenuName:c.PostForm("menunane"),
+		MenuUrl:c.PostForm("menuurl"),
 	}
 	controller.db.Save(&menu)
 	c.Redirect(http.StatusMovedPermanently, "/menu/index?msg=新增成功&code=alert-success")
+}
+
+func (controller MenuController)EditMenu(c *gin.Context) {
+	id, rs := c.GetQuery("id")
+	if rs == true {
+		data := &models.SysMenu{}
+		controller.db.First(&data, id)
+		c.HTML(http.StatusOK, "menu_edit.html", gin.H{
+			"data":data,
+		})
+	} else {
+		c.Redirect(http.StatusMovedPermanently, "/menu/index?msg=系统出错&code=alert-danger")
+	}
+
+}
+
+func (controller MenuController)EditMenuEntity(c *gin.Context) {
+	id, rs := c.GetPostForm("id")
+	if rs == true {
+		menu := &models.SysMenu{
+			MenuName:c.PostForm("menunane"),
+			MenuUrl:c.PostForm("menuurl"),
+		}
+		controller.db.Model(&models.SysMenu{}).Where("id=?", id).Update(&menu)
+		c.Redirect(http.StatusMovedPermanently, "/menu/index?msg=编辑成功&code=alert-success")
+	} else {
+		c.Redirect(http.StatusMovedPermanently, "/menu/index?msg=编辑失败&code=alert-danger")
+	}
+
 }
 
 func (controller MenuController)DeleteMenuEntity(c *gin.Context) {
